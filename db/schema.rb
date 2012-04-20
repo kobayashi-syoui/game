@@ -20,7 +20,9 @@ ActiveRecord::Schema.define(:version => 201204110001) do
   end
 
   create_table "cards", :force => true do |t|
-    t.string   "name"
+    t.string   "name",       :null => false
+    t.text     "text"
+    t.text     "flavor"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

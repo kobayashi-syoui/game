@@ -1,0 +1,37 @@
+<script type="text/javascript">
+$(function() {
+  sock = new GameSocket("ws://172.16.0.156:8080");
+});
+
+function send_message()
+{
+  var text = $("#text2").val();
+  sock.chat(text);
+}
+</script>
+<input type="text" id="text2"/>
+<input type="button" value="押す" onclick="send_message();"><br />
+<br />
+
+
+<table>
+  <tr>
+    <td style="background-color:#990000;width:50px;height:50px;"></td>
+    <td style="background-color:#990000;width:50px;height:50px;"></td>
+    <td style="background-color:#990000;width:50px;height:50px;"></td>
+  </tr>
+  <tr>
+    <td style="background-color:#990000;width:50px;height:50px;"></td>
+    <td style="background-color:#990000;width:50px;height:50px;"></td>
+    <td style="background-color:#990000;width:50px;height:50px;"></td>
+  </tr>
+  <tr>
+    <td style="background-color:#990000;width:50px;height:50px;"></td>
+    <td style="background-color:#990000;width:50px;height:50px;"></td>
+    <td style="background-color:#990000;width:50px;height:50px;"></td>
+  </tr>
+</table>
+
+
+<div id="history">
+</div>

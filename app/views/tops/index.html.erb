@@ -1,0 +1,54 @@
+<script type="text/javascript">
+function move(value) {
+  $(".text").text(value);
+}
+
+function sleep(mill) {
+  var d1 = new Date().getTime();
+  var d2 = new Date().getTime();
+  while ( d2 < d1 + mill ) {
+    d2 = new Date().getTime();
+  }
+  return;
+}
+
+function Interval(onInterval)
+{
+  var id = null;
+  this.start = function(time)
+  {
+    if (id)
+    {
+      clearInterval(id);
+    }
+
+    id = onInterval ? setInterval(onInterval, time) : null;
+  }
+
+  this.clear = function()
+  {
+    if (id)
+    {
+      clearInterval(id);
+      id = null;
+    }
+  }
+}
+</script>
+
+<script type="text/x-script.multithreaded-js">
+  while(true) {
+    var req = Concurrent.Thread.Http.get("<%= js_tops_path(:s => params[:s], :t => params[:t]) %>", ["Accept", "*"]);
+    if (req.status == 200) {
+      var ret = eval("(" + req.responseText + ")");
+      move(ret.result);
+    } else {
+      move("Exit.");
+      break;
+    }
+    sleep(1000);
+  }
+</script>
+
+<%= text_field_tag :text %>
+<p class="text"></p>

@@ -1,4 +1,12 @@
 Game::Application.routes.draw do
+  match '/' => 'tops#index'
+
+  resources :tops do
+    collection do
+      get :js
+      get :test
+    end
+  end
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
