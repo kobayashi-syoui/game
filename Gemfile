@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.2'
 gem 'jpmobile'
+gem 'memcache-client'
+gem 'dalli'
 
 gem 'redis', '2.1.1'
 gem 'redis-objects'
@@ -26,6 +28,7 @@ end
 
 gem 'em-websocket'
 gem 'jquery-rails'
+gem 'pjax-rails'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

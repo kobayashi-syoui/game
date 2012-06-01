@@ -1,16 +1,6 @@
 #!/usr/bin/env ruby
-#require 'rubygems'
-#require 'em-websocket'
 
 connections = Array.new
-
-=begin
-Thread.new do
-  while true do
-    sleep 0.001
-  end
-end
-=end
 
 EventMachine::WebSocket.start(:host => "0.0.0.0", :port => 8080, :debug => !Rails.env.production?) do |ws|
   ws.onopen { 

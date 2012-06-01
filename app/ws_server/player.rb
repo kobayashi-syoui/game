@@ -1,6 +1,5 @@
 # coding: utf-8
 
-
 class WsServer
   class Player
     attr_accessor :hp, :mp, :name

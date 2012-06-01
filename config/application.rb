@@ -16,7 +16,7 @@ module Game
     # -- all .rb files in that directory are automatically loaded.
 
     # Custom directories with classes and modules you want to be autoloadable.
-    # config.autoload_paths += %W(#{config.root}/extras)
+    #config.autoload_paths += %W(#{Rails.root}/app/ws_server)
     config.action_view.javascript_expansions[:defaults] = %w(jquery.min jquery-ui.min swfobject FABridge web_socket rails)
 
     # Only load the plugins named here, in the order given (default is alphabetical).
