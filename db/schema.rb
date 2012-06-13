@@ -11,10 +11,41 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 201204110000) do
+ActiveRecord::Schema.define(:version => 20120611084735) do
 
   create_table "accounts", :force => true do |t|
+    t.string   "name",       :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "cards", :force => true do |t|
     t.string   "name"
+    t.integer  "race1"
+    t.integer  "race2"
+    t.integer  "race3"
+    t.integer  "race4"
+    t.integer  "hp"
+    t.integer  "cost"
+    t.string   "skill1_name"
+    t.integer  "skill1_damage"
+    t.integer  "skill1_cost"
+    t.string   "skill1_element"
+    t.text     "skill1_text"
+    t.string   "skill2_name"
+    t.integer  "skill2_damage"
+    t.integer  "skill2_cost"
+    t.string   "skill2_element"
+    t.text     "skill2_text"
+    t.text     "effect"
+    t.text     "flavor"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
+  create_table "decks", :force => true do |t|
+    t.string   "key"
+    t.integer  "card_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

@@ -5,8 +5,23 @@ Game::Application.routes.draw do
     collection do
       get :js
       get :test
+      get :pjax
     end
   end
+
+  resources :mains do
+    collection do
+      get :reset, :move_field, :delete_hand, :delete_field
+      post :draw
+    end
+  end
+
+  resources :decks do
+    member do
+      get :add, :delete
+    end
+  end
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

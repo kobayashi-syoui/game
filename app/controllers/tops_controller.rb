@@ -1,3 +1,5 @@
+# coding: utf-8
+
 class TopsController < ApplicationController
   class Message
     def initialize(my, other)
@@ -18,6 +20,12 @@ class TopsController < ApplicationController
     def list(id=@my)
       $redis.lrange id, 0, -1
     end
+  end
+
+  def index
+  end
+
+  def pjax
   end
 
   def js

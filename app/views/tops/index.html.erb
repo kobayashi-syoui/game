@@ -1,56 +1,9 @@
-<script type="text/javascript">
-function move(value) {
-  $(".text").text(value);
-}
+<%= rand(10) %>
 
-function sleep(mill) {
-  var d1 = new Date().getTime();
-  var d2 = new Date().getTime();
-  while ( d2 < d1 + mill ) {
-    d2 = new Date().getTime();
-  }
-  return;
-}
+<div class="product">
+  <%= link_to "リンク押す", pjax_tops_path %><br />
+</div>
 
-function Interval(onInterval)
-{
-  var id = null;
-  this.start = function(time)
-  {
-    if (id)
-    {
-      clearInterval(id);
-    }
+<div data-pjax-container>
+</div>
 
-    id = onInterval ? setInterval(onInterval, time) : null;
-  }
-
-  this.clear = function()
-  {
-    if (id)
-    {
-      clearInterval(id);
-      id = null;
-    }
-  }
-}
-</script>
-
-<script type="text/x-script.multithreaded-js">
-  while(true) {
-    var req = Concurrent.Thread.Http.get("<%= js_tops_path(:s => params[:s], :t => params[:t]) %>", ["Accept", "*"]);
-    if (req.status == 200) {
-      var ret = eval("(" + req.responseText + ")");
-      move(ret.result);
-    } else {
-      move("Exit.");
-      break;
-    }
-    sleep(1000);
-  }
-</script>
-
-<%= link_to "この画面は偽物なので、こっちに来て", test_tops_path %><br />
-
-<%= text_field_tag :text %>
-<p class="text"></p>

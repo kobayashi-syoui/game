@@ -1,0 +1,17 @@
+<%= link_to "戻る", mains_path %><br />
+
+<span style="float:left;">
+<% @cards.each do |card| %>
+  <%= render :partial => "partial/card_show", :locals => {:card => card, :link => true} %>
+<% end %>
+</span>
+<span style="clear:both;font-size:x-small;">
+  <span style="font-size:x-large;"><%= @decks.size %></span>枚<br />
+  <br />
+  <% @decks.each do |deck| %>
+    <% card = deck.card %>
+    <% name = "#{card.name}(#{card.hp}/#{card.cost})　　　　[#{card.skill1}]　　[#{card.skill2}]" %>
+    <%= link_to name, delete_deck_path(@key, :deck_id => deck.id) %><br />
+  <% end %>
+</span>
+

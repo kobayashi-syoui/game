@@ -6,9 +6,8 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-table_names = %w(card)  
+file_names = Dir::glob("#{Rails.root}/db/seeds/#{Rails.env}/*").sort
   
-table_names.each do |table_name|  
-  path = "#{Rails.root}/db/seeds/#{Rails.env}/#{table_name}.rb"  
-  require(path) if File.exist?(path)  
+file_names.each do |file_name|  
+  require(file_name) if File.exist?(file_name)
 end

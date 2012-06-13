@@ -1,0 +1,18 @@
+<div style="height:120px;width:90px;border:solid #000000 1px;font-size:x-small;">
+  <% if link %>
+    <%= link_to card.name, add_deck_path(@key, :card_id => card.id) %>(<%= card.hp %>/<%= card.cost %>)<br />
+  <% else %>
+    <%= link_to card.name %>(<%= card.hp %>/<%= card.cost %>)<br />
+  <% end %>
+  <hr>
+  <% if card.skill1_name %>
+    SK:<%= card.skill1_name %>(<%= card.skill1_damage %>/<%= card.skill1_cost %>)<br />
+    <%= truncate card.skill1_text, :length => 10 %><br />
+  <% end %>
+  <% if card.skill2_name %>
+    SK:<%= card.skill2_name %>(<%= card.skill2_damage %>/<%= card.skill2_cost %>)<br />
+    <%= truncate card.skill2_text, :length => 10 %><br />
+  <% end %>
+  <hr>
+  <%= truncate card.effect, :length => 10 %>
+</div>

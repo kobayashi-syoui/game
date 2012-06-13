@@ -1,0 +1,98 @@
+
+<style type="text/css">
+
+#wrapper {
+  width: 950px;
+  margin: 0 auto;
+}
+
+.hand {
+  height: 140px;
+  width: 850px;
+  border: solid #000000 1px;
+  margin: 0 auto;
+  display: -webkit-box;　/* Safari,Google Chrome用 */  
+  display: -moz-box;　/* Firefox用 */ 
+}
+
+.field {
+  height: 160px;
+  width: 950px;
+  border: solid #000000 1px;
+  position: relative;
+  display: -webkit-box;　/* Safari,Google Chrome用 */  
+  display: -moz-box;　/* Firefox用 */ 
+}
+
+.card {
+  height: 120px;
+  width: 90px;
+  border: solid #000000 1px;
+}
+
+.target_mount {
+  position: absolute;
+  top: 15px;
+  left: 30px;
+}
+
+.my_mount {
+  position: absolute;
+  top: 15px;
+  right: 30px;
+}
+</style>
+
+<%= link_to "リセット", reset_mains_path %>&nbsp;&nbsp;<%= link_to "デッキ編集(上)", edit_deck_path("target") %>&nbsp;&nbsp;<%= link_to "デッキ編集(下)", edit_deck_path("my") %>
+<div id="wrapper">
+  <div class="hand target_hand">
+    <% @target.hand.each do |deck| %>
+      <div>
+        <%= render :partial => "partial/card_show", :locals => {:card => deck.card, :link => false} %>
+        <%= link_to "[場]", move_field_mains_path(:type => "target", :id => deck.id) %>　<%= link_to "[削除]", delete_hand_mains_path(:type => "target", :id => deck.id) %>
+      </div>
+    <% end %>
+  </div>
+  <br />
+  <div class="field">
+    <div class="card target_mount">
+      <%= button_to "Draw", draw_mains_path(:type => :target) %><br />
+      <%= @target.mount.size %>枚
+    </div>
+    　
+    　
+    　
+    　
+    　
+    　
+    　
+    <% @target.field.each do |deck| %>
+      <div>
+        <%= render :partial => "partial/card_show", :locals => {:card => deck.card, :link => false} %>
+        <%= link_to "[削除]", delete_field_mains_path(:type => "target", :id => deck.id) %>
+      </div>
+    <% end %>
+  </div>
+  <br />
+  <div class="field">
+    <div class="card my_mount">
+      <%= button_to "Draw", draw_mains_path(:type => :my) %><br />
+      <%= @my.mount.size %>枚
+    </div>
+    <% @my.field.each do |deck| %>
+      <div>
+        <%= render :partial => "partial/card_show", :locals => {:card => deck.card, :link => false} %>
+        <%= link_to "[削除]", delete_field_mains_path(:type => "my", :id => deck.id) %>
+      </div>
+    <% end %>
+  </div>
+  <br />
+  <div class="hand my_hand">
+    <% @my.hand.each do |deck| %>
+      <div>
+        <%= render :partial => "partial/card_show", :locals => {:card => deck.card, :link => false} %>
+        <%= link_to "[場]", move_field_mains_path(:type => "my", :id => deck.id) %>　<%= link_to "[削除]", delete_hand_mains_path(:type => "my", :id => deck.id) %>
+      </div>
+    <% end %>
+  </div>
+</div>
