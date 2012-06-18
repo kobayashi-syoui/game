@@ -4,4 +4,4 @@
 
 jQuery ->
   $('.product a').pjax('[data-pjax-container]')
-
+  

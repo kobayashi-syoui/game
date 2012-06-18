@@ -1,15 +1,48 @@
 
 <style type="text/css">
-
+html{background: #333;font-family: sans-serif;color: #fff;}
+a {color:#fff;text-decoration: none;font-weight: bold;border-bottom: 1px dotted #fff;}
 #wrapper {
   width: 950px;
   margin: 0 auto;
 }
 
+.singleCard {
+	height:120px;
+	width:90px;
+	position: relative;
+	border:1px solid #fff;
+	border-radius: 4px;
+	margin-left: 10px;
+	background: #ccc;
+	color: #333;
+}
+
+.singleCard a {
+	color: #f00;
+	
+}
+
+.cardAbility {
+	position: absolute;
+	top:20px;
+	left: 10px;
+	background: rgba(0,0,0,0.8);
+	color: #fff;
+	border: 1px solid rgba(255,255,255,0.5);
+	-webkit-box-shadow: 10px 10px 10px 0 rgba(0,0,0,0.5);
+	max-width: 1000px;
+	min-width: 200px;
+	z-index: 10000;
+	border-radius: 6px;
+	display: none;
+	padding: 2px;
+}
+
 .hand {
   height: 140px;
   width: 850px;
-  border: solid #000000 1px;
+  border: solid #999 1px;
   margin: 0 auto;
   display: -webkit-box;　/* Safari,Google Chrome用 */  
   display: -moz-box;　/* Firefox用 */ 
@@ -18,7 +51,8 @@
 .field {
   height: 160px;
   width: 950px;
-  border: solid #000000 1px;
+  border: 1px dashed #999;
+  padding: 15px;
   position: relative;
   display: -webkit-box;　/* Safari,Google Chrome用 */  
   display: -moz-box;　/* Firefox用 */ 
@@ -27,22 +61,33 @@
 .card {
   height: 120px;
   width: 90px;
-  border: solid #000000 1px;
+  border: 1px dashed #999;
+}
+
+.cardName {
+	font-size: 1em;
 }
 
 .target_mount {
-  position: absolute;
-  top: 15px;
-  left: 30px;
 }
 
 .my_mount {
   position: absolute;
   top: 15px;
-  right: 30px;
+  right: 15px;
 }
 </style>
-
+<script charset="utf-8">
+	$(document).ready(function(){
+			$('.singleCard').click(function() {
+				if ($(this).find(".cardAbility").css("display") == "none") {
+					$(this).find(".cardAbility").css("display", "block");
+				} else {
+					$(this).find(".cardAbility").css("display", "none");
+				}
+			});
+	});
+</script>
 <%= link_to "リセット", reset_mains_path %>&nbsp;&nbsp;<%= link_to "デッキ編集(上)", edit_deck_path("target") %>&nbsp;&nbsp;<%= link_to "デッキ編集(下)", edit_deck_path("my") %>
 <div id="wrapper">
   <div class="hand target_hand">
@@ -59,12 +104,6 @@
       <%= button_to "Draw", draw_mains_path(:type => :target) %><br />
       <%= @target.mount.size %>枚
     </div>
-    　
-    　
-    　
-    　
-    　
-    　
     　
     <% @target.field.each do |deck| %>
       <div>
