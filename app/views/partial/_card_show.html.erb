@@ -9,14 +9,25 @@
     COST:<%= card.cost %><br />
   <% end %>
   <div class="cardAbility">
+  <dl>
+  
   <% if card.skill1_name %>
-    SK:<%= card.skill1_name %>(<%= card.skill1_damage %>/<%= card.skill1_cost %>)<br />
-    <%= truncate card.skill1_text, :length => 10 %><br />
+    <dt><%= card.skill1_name %></dt>
+    <dd>
+    ダメージ:<%= card.skill1_damage %><br />
+    コスト:<%= card.skill1_cost %><br />
+    <%= truncate card.skill1_text %><br />
+    </dd>
   <% end %>
   <% if card.skill2_name %>
-    SK:<%= card.skill2_name %>(<%= card.skill2_damage %>/<%= card.skill2_cost %>)<br />
-    <%= truncate card.skill2_text, :length => 10 %><br />
+    <dt><%= card.skill2_name %></dt>
+    <dd>
+    ダメージ:<%= card.skill2_damage %><br />
+    コスト:<%= card.skill2_cost %><br />
+    <%= truncate card.skill2_text %><br />
+    </dd>
   <% end %>
-  <%= truncate card.effect, :length => 10 %>
+  </dl>
+  <%= truncate card.effect %>
   </div>
 </div>

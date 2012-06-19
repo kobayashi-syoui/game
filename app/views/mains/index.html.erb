@@ -6,6 +6,20 @@ a {color:#fff;text-decoration: none;font-weight: bold;border-bottom: 1px dotted 
   width: 950px;
   margin: 0 auto;
 }
+dl {
+	margin: 0;
+}
+dt {
+	font-weight: bold;
+}
+
+dt:before {
+	content: "■";
+}
+
+dd {
+	margin-left: 1em;
+}
 
 .singleCard {
 	height:120px;
@@ -31,8 +45,7 @@ a {color:#fff;text-decoration: none;font-weight: bold;border-bottom: 1px dotted 
 	color: #fff;
 	border: 1px solid rgba(255,255,255,0.5);
 	-webkit-box-shadow: 10px 10px 10px 0 rgba(0,0,0,0.5);
-	max-width: 1000px;
-	min-width: 200px;
+	width: 400px;
 	z-index: 10000;
 	border-radius: 6px;
 	display: none;
@@ -81,6 +94,7 @@ a {color:#fff;text-decoration: none;font-weight: bold;border-bottom: 1px dotted 
 	$(document).ready(function(){
 			$('.singleCard').click(function() {
 				if ($(this).find(".cardAbility").css("display") == "none") {
+					$(".cardAbility").css("display", "none");
 					$(this).find(".cardAbility").css("display", "block");
 				} else {
 					$(this).find(".cardAbility").css("display", "none");
