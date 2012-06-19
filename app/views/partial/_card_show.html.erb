@@ -4,7 +4,7 @@
     HP:<%= card.hp %><br />
     COST:<%= card.cost %><br />
   <% else %>
-    <%= link_to card.name, nil, :class => "cardName" %><br />
+    <span class="cardName"><%= card.name %></span><br />
     HP:<%= card.hp %><br />
     COST:<%= card.cost %><br />
   <% end %>
