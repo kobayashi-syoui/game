@@ -1,10 +1,12 @@
 source 'https://rubygems.org'
 
+# 基本セット
 gem 'rails', '3.2.2'
 gem 'jpmobile'
 gem 'memcache-client'
 gem 'dalli'
 
+# redis
 gem 'redis', '2.1.1'
 gem 'redis-objects'
 
@@ -26,10 +28,19 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+# websocket
 gem 'em-websocket'
+
+# jquery, pjax
 gem 'jquery-rails'
-#gem 'pjax-rails'
 gem 'rack-pjax'
+#gem 'pjax-rails'
+
+# 外部認証
+#gem 'twitter-auth', :require => 'twitter_auth/engine', :git => 'git://github.com/rokudenashi/twitter-auth.git', :branch => 'rails_3'
+gem 'omniauth'
+gem 'omniauth-twitter'
+gem 'omniauth-facebook'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

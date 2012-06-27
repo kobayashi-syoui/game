@@ -102,7 +102,7 @@ dd {
 			});
 	});
 </script>
-<%= link_to "リセット", reset_mains_path %>&nbsp;&nbsp;<%= link_to "デッキ編集(上)", edit_deck_path("target") %>&nbsp;&nbsp;<%= link_to "デッキ編集(下)", edit_deck_path("my") %>
+<%= link_to "リセット", reset_mains_path %>&nbsp;&nbsp;<%= link_to "デッキ編集(上)", edit_deck_path("target") %>&nbsp;&nbsp;<%= link_to "デッキ編集(下)", edit_deck_path("my") %>&nbsp;&nbsp;<%= link_to "twitter  でログイン", "/auth/twitter" %>
 <div id="wrapper">
   <div class="hand target_hand">
     <% @target.hand.each do |deck| %>

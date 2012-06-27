@@ -22,6 +22,9 @@ Game::Application.routes.draw do
     end
   end
 
+  # 外部認証用
+  match "/auth/:provider/callback" => "sessions#callback"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
