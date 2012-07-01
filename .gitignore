@@ -14,3 +14,14 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+# Ignore personal settings
+tools/libevent-2.0.19-stable/
+tools/memcached-1.4.13/
+public/html/.DS_Store
+
+public/html/card/.DS_Store
+
+public/html/card/magic/.DS_Store
+
+public/.DS_Store

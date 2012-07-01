@@ -45,5 +45,7 @@ gem 'rack-pjax'
 
 group :development do
   # To use debugger
+  gem 'linecache19', '0.5.13', :path => "/opt/local/lib/ruby1.9/gems/1.9.1/gems/linecache19-0.5.13/"
+  gem 'ruby-debug-base19', '0.11.26', :path => "/opt/local/lib/ruby1.9/gems/1.9.1/gems/ruby-debug-base19-0.11.26/"
   gem 'ruby-debug19', :require => 'ruby-debug'
 end

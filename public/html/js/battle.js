@@ -99,13 +99,7 @@ jQuery(function($) {
 			}
 		}
 	});
-	
-	
-	
-	
 
-
-	
 	function getRectPoints(ptax, ptay, ptbx, ptby) {
 		var Vx= ptbx - ptax;
 		var Vy= ptby - ptay;
