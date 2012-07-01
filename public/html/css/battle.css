@@ -1,0 +1,258 @@
+/*
+html5doctor.com Reset Stylesheet
+v1.6.1
+Last Updated: 2010-09-17
+Author: Richard Clark - http://richclarkdesign.com
+Twitter: @rich_clark
+*/
+
+/*要素のフォントサイズやマージン・パディングをリセットしています*/
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+/*行の高さをフォントサイズと同じにしています*/
+body {
+    line-height:1;
+}
+
+/*新規追加要素のデフォルトはすべてインライン要素になっているので、section要素などをブロック要素へ変更しています*/
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section {
+    display:block;
+}
+
+/*nav要素内ulのマーカー（行頭記号）を表示しないようにしています*/
+nav ul {
+    list-style:none;
+}
+
+/*引用符の表示が出ないようにしています*/
+blockquote, q {
+    quotes:none;
+}
+
+/*blockquote要素、q要素の前後にコンテンツを追加しないように指定しています*/
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content:'';
+    content:none;
+}
+
+/*a要素のフォントサイズなどをリセットしフォントの縦方向の揃え位置を親要素のベースラインに揃えるようにしています*/
+a {
+    margin:0;
+    padding:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+/* ins要素のデフォルトをセットし、色を変える場合はここで変更できるようにしています */
+ins {
+    background-color:#ff9;
+    color:#000;
+    text-decoration:none;
+}
+
+/* mark要素のデフォルトをセットし、色やフォントスタイルを変える場合はここで変更できるようにしています
+また、mark要素とは、文書内の検索結果で該当するフレーズをハイライトして、目立たせる際に使用するようです。*/
+mark {
+    background-color:#ff9;
+    color:#000;
+    font-style:italic;
+    font-weight:bold;
+}
+
+/*テキストに打ち消し線が付くようにしています*/
+del {
+    text-decoration: line-through;
+}
+
+/*IEではデフォルトで点線を下線表示する設定ではないので、下線がつくようにしています
+また、マウスオーバー時にヘルプカーソルの表示が出るようにしています*/
+abbr[title], dfn[title] {
+    border-bottom:1px dotted;
+    cursor:help;
+}
+
+/*隣接するセルのボーダーを重ねて表示し、間隔を0に指定しています*/
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+/*水平罫線のデフォルトである立体的な罫線を見えなくしています*/
+hr {
+    display:block;
+    height:1px;
+    border:0;
+    border-top:1px solid #cccccc;
+    margin:1em 0;
+    padding:0;
+}
+
+/*縦方向の揃え位置を中央揃えに指定しています*/
+
+input, select {
+    vertical-align:middle;
+}
+
+body {
+	background: #000;
+}
+
+canvas {
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+#wrap {
+	background: url("../thumb5.jpg") no-repeat 0 0;
+	-webkit-background-size:100% auto;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+#fieldWrap {
+	-webkit-perspective: 300;
+	-webkit-transform-style: preserve-3d;
+	-webkit-transform:translate3d(0,-51px,0) rotateX(-15deg) scale(0.8);
+	width:100%;
+}
+
+#field{
+	-webkit-transform-style: preserve-3d;
+	width:300px;
+	height:300px;
+	margin: 0 auto;
+}
+
+        #fieldStyle {
+	        opacity: 0.4;
+	        background:#fff;
+	        width:300px;
+	        height:300px;
+	        -webkit-transform: rotateX(90deg);
+	        position: absolute;
+        }
+        #myHand {
+	        display: -webkit-box;
+	        position: absolute;
+	        bottom: 0;
+        }
+        .myCard {
+	        list-style: none;
+	        width: 44px;
+	        height: 44px;
+	        margin-right: 1px;
+        }
+        
+#field1 {
+	width: 40px;
+	height: 40px;
+	-webkit-transform: translate3d(30px,100px,-40px);
+	position: absolute;
+	z-index:100;
+}
+
+#field2 {
+	width: 42px;
+	height: 42px;
+	position: absolute;
+	-webkit-transform: translate3d(30px,100px,50px);
+	z-index:101;
+}
+
+#field3 {
+	width: 45px;
+	height: 45px;
+	position: absolute;
+	-webkit-transform: translate3d(30px,100px,140px);
+	z-index:102;
+}
+
+#field4 {
+	width: 40px;
+	height: 40px;
+	-webkit-transform: translate3d(75px,100px,5px);
+	position: absolute;
+	z-index:100;
+}
+
+#field5 {
+	width: 42px;
+	height: 42px;
+	position: absolute;
+	-webkit-transform: translate3d(75px,100px,95px);
+	z-index:101;
+}
+
+#field6 {
+	width: 40px;
+	height: 40px;
+	-webkit-transform: translate3d(245px,100px,-40px);
+	position: absolute;
+	z-index:100;
+}
+
+#field7 {
+	width: 42px;
+	height: 42px;
+	position: absolute;
+	-webkit-transform: translate3d(245px,100px,50px);
+	z-index:101;
+}
+
+#field8 {
+	width: 45px;
+	height: 45px;
+	position: absolute;
+	-webkit-transform: translate3d(245px,100px,140px);
+	z-index:102;
+}
+
+#field9 {
+	width: 40px;
+	height: 40px;
+	-webkit-transform: translate3d(200px,100px,5px);
+	position: absolute;
+	z-index:100;
+}
+
+#field10 {
+	width: 42px;
+	height: 42px;
+	position: absolute;
+	-webkit-transform: translate3d(200px,100px,95px);
+	z-index:101;
+}
+
+.selectObj {
+	-webkit-animation: selectAnm 0.5s linear infinite;
+}
+
+@-webkit-keyframes selectAnm {
+	0%{opacity:1;}
+	50%{opacity:0.5;}
+	100%{opacity:1;}
+}

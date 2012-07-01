@@ -7,22 +7,20 @@ window.onload = function() {
 	var game = new Game(w, h);
 	game.fps = 24;
 	game.preload('card/monster/kani.jpg');
+	game.preload('test.svg');
 	
 	game.onload = function() {
 		var fieldWrap = new Group();
 		var field = new Sprite3d(500, 500);
 		var card = new Sprite3d(640, 640);
-		card.image = game.assets['card/monster/kani.jpg'];
+		card.image = game.assets['test.jpg'];
 		field.backgroundColor = '#ffffff';
 		field._element.setAttribute('class','fieldStyle');
 		game.rootScene.addChild(fieldWrap);
-		fieldWrap.addChild(field);
+		//game.rootScene.addChild(field);
 		fieldWrap.addChild(card);
-		fieldWrap.moveBy(70,120);
 		card.scale(0.1,0.1);
-		field.rotateX(70);
-		field.rotateZ(30);
-		field.moveTo(30,120);
+		field.rotateX(80);
 	};
 	
 	game.start();

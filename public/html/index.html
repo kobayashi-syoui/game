@@ -6,20 +6,40 @@
     <meta name="viewport" content="width=device-width, user-scalable=no"> 
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <script type="text/javascript" src="enchant.min.js"></script>
-    <script type="text/javascript" src="Sprite3d.js"></script>
-    <script type="text/javascript" src="game.js"></script>
-    <style type="text/css">
-        body {
-            margin: 0;
-            padding: 0;
-            background: #fff;
-        }
-        .fieldStyle {
-	        border: 1px solid #999;
-        }
-    </style>
+    <link rel="stylesheet" href="css/battle.css?1">
+    <script src="js/jquery-1.7.2.min.js"></script>
+    <script src="js/battle.js"></script>
+    <!--
+    <script src="js/jquery.mobile-1.1.0.min.js"></script>
+    -->
 </head>
 <body>
+	<div id="wrap">
+		<div id="fieldWrap">
+			<div id="field">
+				<div id="fieldStyle">
+				</div>
+				<img src="test.svg" id="field1" class="myCreature">
+				<img src="test.svg" id="field2" class="myCreature">
+				<img src="test.svg" id="field3" class="myCreature">
+				<img src="test.svg" id="field4" class="myCreature">
+				<img src="test.svg" id="field5" class="myCreature">
+				<img src="test.svg" id="field6" class="targetCreature">
+				<img src="test.svg" id="field7" class="targetCreature">
+				<img src="test.svg" id="field8" class="targetCreature">
+				<img src="test.svg" id="field9" class="targetCreature">
+				<img src="test.svg" id="field10" class="targetCreature">
+			</div>
+		</div>
+		<ul id="myHand">
+			<li class="myCard"><img src="card/magic/thunder.png" width=44px" height="44px"></li>
+			<li class="myCard"><img src="card/monster/iguana.jpg" width=44px" height="44px"></li>
+			<li class="myCard"><img src="card/magic/beam.png" width=44px" height="44px"></li>
+			<li class="myCard"><img src="card/monster/kani.jpg" width=44px" height="44px"></li>
+			<li class="myCard"><img src="card/magic/freeze.png" width=44px" height="44px"></li>
+			<li class="myCard"><img src="card/magic/darkness.png" width=44px" height="44px"></li>
+			<li class="myCard"><img src="card/monster/stanbeetle.jpg" width=44px" height="44px"></li>
+		</ul>
+	</div>
 </body>
 </html>
