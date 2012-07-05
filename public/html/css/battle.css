@@ -166,83 +166,59 @@ canvas {
 	        height: 44px;
 	        margin-right: 1px;
         }
-        
-#field1 {
+.myCreature, .targetCreature {
+	position: absolute;
 	width: 40px;
 	height: 40px;
-	-webkit-transform: translate3d(30px,100px,-40px);
-	position: absolute;
+	-webkit-transition: 0.4s ease-in-out;
+}
+        
+#field1 {
+	-webkit-transform: translate3d(30px,100px,-40px);	
 	z-index:100;
 }
 
 #field2 {
-	width: 42px;
-	height: 42px;
-	position: absolute;
 	-webkit-transform: translate3d(30px,100px,50px);
 	z-index:101;
 }
 
 #field3 {
-	width: 45px;
-	height: 45px;
-	position: absolute;
 	-webkit-transform: translate3d(30px,100px,140px);
 	z-index:102;
 }
 
 #field4 {
-	width: 40px;
-	height: 40px;
 	-webkit-transform: translate3d(75px,100px,5px);
-	position: absolute;
 	z-index:100;
 }
 
 #field5 {
-	width: 42px;
-	height: 42px;
-	position: absolute;
 	-webkit-transform: translate3d(75px,100px,95px);
 	z-index:101;
 }
 
 #field6 {
-	width: 40px;
-	height: 40px;
 	-webkit-transform: translate3d(245px,100px,-40px);
-	position: absolute;
 	z-index:100;
 }
 
 #field7 {
-	width: 42px;
-	height: 42px;
-	position: absolute;
 	-webkit-transform: translate3d(245px,100px,50px);
 	z-index:101;
 }
 
 #field8 {
-	width: 45px;
-	height: 45px;
-	position: absolute;
 	-webkit-transform: translate3d(245px,100px,140px);
 	z-index:102;
 }
 
 #field9 {
-	width: 40px;
-	height: 40px;
 	-webkit-transform: translate3d(200px,100px,5px);
-	position: absolute;
 	z-index:100;
 }
 
 #field10 {
-	width: 42px;
-	height: 42px;
-	position: absolute;
 	-webkit-transform: translate3d(200px,100px,95px);
 	z-index:101;
 }
@@ -253,6 +229,6 @@ canvas {
 
 @-webkit-keyframes selectAnm {
 	0%{opacity:1;}
-	50%{opacity:0.5;}
+	50%{opacity:0.2;}
 	100%{opacity:1;}
 }
