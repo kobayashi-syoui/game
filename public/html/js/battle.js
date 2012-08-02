@@ -10,13 +10,9 @@ jQuery(function($) {
 	var canvasHeight;
 	var aw = 10;
 	var dragFlag = false;
-
-    $('body').css({'width': w,'height': h});
+	var isToolTipOpen = false;
+	init();
     
-    
-    
-    
-   
 	$('#fieldWrap').bind({
 		'touchstart': function(e) {
 			 if( dragFlag == false ){
@@ -52,7 +48,6 @@ jQuery(function($) {
 			e.preventDefault();
 			var ctx = $canvas.get(0).getContext('2d');
 		    points.push({x:event.changedTouches[0].pageX, y:event.changedTouches[0].pageY});
-		
 		    var array = getRectPoints(
 		    	points[0].x,
 		    	points[0].y,
@@ -71,6 +66,7 @@ jQuery(function($) {
 		    ctx.lineTo(array[6].x, array[6].y);
 		    ctx.closePath();
 		    ctx.fill();
+		    
 			isHoverTarget(event);
 		},
 		'touchend': function(e) { 
@@ -114,12 +110,19 @@ jQuery(function($) {
 			// ターゲットが敵クリーチャーの場合
 			for (i = 1;i <= $(".targetCreature").length; i++){
 				var t = i + $(".targetCreature").length;
-				var obj = new creature("#field" + t);
+
+				var obj = new monsterCard("#f" + t);
+				
+				
 				if (e.changedTouches[0].pageX > obj.x() && e.changedTouches[0].pageX < obj.x() + 40  && e.changedTouches[0].pageY > obj.y() && e.changedTouches[0].pageY < obj.y() + 40) {
-					$("#field" + t).addClass("selectObj");
+					$("#f" + t).addClass("selectObj");
+					openToolTip(t, e);
 				}
 				else {
-					$("#field" + t).removeClass("selectObj");
+					if($("#f" + t).hasClass("selectObj")){
+						$("#f" + t).removeClass("selectObj");
+						closeToolTip(e);
+					}
 				}
 			}
 	}
@@ -128,17 +131,18 @@ jQuery(function($) {
 		// ターゲットが敵クリーチャーの場合
 		for (i = 1;i <= $(".targetCreature").length; i++){
 			var t = i + $(".targetCreature").length;
-			var obj = new creature("#field" + t);
+			var obj = new monsterCard("#f" + t);
 			if (e.changedTouches[0].pageX > obj.x() && e.changedTouches[0].pageX < obj.x() + 40  && e.changedTouches[0].pageY > obj.y() && e.changedTouches[0].pageY < obj.y() + 40) {
 				
-				$("#field" + t).removeClass("selectObj");
+				$("#f" + t).removeClass("selectObj");
+				closeToolTip(e);
 				$("#"+name).css("-webkit-transform","translate3d("+ (obj.fieldX() - 45) +"px,"+obj.fieldY()+"px,"+obj.fieldZ()+"px)");
 				//alert("ドゴォ!"+ name + "からの攻撃で" + $("#field" + t).attr("id") + "は死んだ");
 			}
 		}
 	}
 	//ここからクリーチャーの情報
-	function creature(id) {
+	function monsterCard(id) {
 		this.x = function() {
 			return $(id).offset().left;
 		};
@@ -160,12 +164,58 @@ jQuery(function($) {
 			m = new WebKitCSSMatrix($(id).css('-webkit-transform'));
 			return m.m43;
 		};
-		/*
-		var off = $(id).offset();
-		alert(off.left);
-		var m = new WebKitCSSMatrix($(id).css('-webkit-transform'));
-		var obj = {x:off.left, y:off.top, dx:m.m41, dy:m.m42, dz:m.m43};
-		return obj;
-		*/
+		this.hp = function() {
+			return 5;
+		};
+		this.maxHp = function() {
+			return 6;
+		};
+		this.cost = function() {
+			return 2;
+		};
+		this.name = function() {
+			return "超高性能地上型機械人間デストルーパー";
+		};
+		this.type = function() {
+			return "機械";
+		};
+		this.power = function() {
+			return 2;
+		};
+		this.attackType = function() {
+			return "斬撃";
+		};
+		this.attackEffect = function() {
+			return "相手は死ぬ";
+		};
+	}
+	
+	function openToolTip(id,e) {
+		if (isToolTipOpen == false) {
+			var x = e.changedTouches[0].pageX - parseInt($("#toolTip").css("width")) - 10;
+			var y = e.changedTouches[0].pageY - parseInt($("#toolTip").css("height")) -10;
+			
+			$("#toolTip").css({"opacity":"1","-webkit-transform":"matrix(1,0,0,1,"+ x + "," + y + ")"});
+
+			isToolTipOpen = true;
+		}
+	}
+	function closeToolTip(e) {
+		if (isToolTipOpen == true) {
+			$("#toolTip").css({"-webkit-transform":"translate(" + e.changedTouches[0].pageX + "px," + e.changedTouches[0].pageY + "px) scale(0.1)", "opacity":"0"});
+			isToolTipOpen = false;
+		}
+	}
+	function init() {
+		 $('body').css({'width': w,'height': h});
+		for (var i = 1;i <= $(".monsterToolTip").length;i++){
+			var obj = new monsterCard("#f" + i);
+			$("#toolTip .cardName").text(obj.name);
+			$("#toolTip .cardType").text(obj.type);
+			$("#toolTip .cardHp").text("HP " + obj.hp() + "/" + obj.maxHp());
+			$("#toolTip .cardAttackType").text(obj.attackType);
+			$("#toolTip .cardPower").text(obj.power);
+			$("#toolTip .cardAttackEffect").text(obj.attackEffect);
+		}
 	}
 });
