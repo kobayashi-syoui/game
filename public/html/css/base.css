@@ -1,0 +1,243 @@
+/*
+html5doctor.com Reset Stylesheet
+v1.6.1
+Last Updated: 2010-09-17
+Author: Richard Clark - http://richclarkdesign.com
+Twitter: @rich_clark
+*/
+
+/*要素のフォントサイズやマージン・パディングをリセットしています*/
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+/*行の高さをフォントサイズと同じにしています*/
+body {
+    line-height:1;
+}
+
+/*新規追加要素のデフォルトはすべてインライン要素になっているので、section要素などをブロック要素へ変更しています*/
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section {
+    display:block;
+}
+
+/*ulのマーカー（行頭記号）を表示しないようにしています*/
+ul {
+    list-style:none;
+}
+
+/*引用符の表示が出ないようにしています*/
+blockquote, q {
+    quotes:none;
+}
+
+/*blockquote要素、q要素の前後にコンテンツを追加しないように指定しています*/
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content:'';
+    content:none;
+}
+
+/*a要素のフォントサイズなどをリセットしフォントの縦方向の揃え位置を親要素のベースラインに揃えるようにしています*/
+a {
+    margin:0;
+    padding:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+/* ins要素のデフォルトをセットし、色を変える場合はここで変更できるようにしています */
+ins {
+    background-color:#ff9;
+    color:#000;
+    text-decoration:none;
+}
+
+/* mark要素のデフォルトをセットし、色やフォントスタイルを変える場合はここで変更できるようにしています
+また、mark要素とは、文書内の検索結果で該当するフレーズをハイライトして、目立たせる際に使用するようです。*/
+mark {
+    background-color:#ff9;
+    color:#000;
+    font-style:italic;
+    font-weight:bold;
+}
+
+/*テキストに打ち消し線が付くようにしています*/
+del {
+    text-decoration: line-through;
+}
+
+/*IEではデフォルトで点線を下線表示する設定ではないので、下線がつくようにしています
+また、マウスオーバー時にヘルプカーソルの表示が出るようにしています*/
+abbr[title], dfn[title] {
+    border-bottom:1px dotted;
+    cursor:help;
+}
+
+/*隣接するセルのボーダーを重ねて表示し、間隔を0に指定しています*/
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+/*水平罫線のデフォルトである立体的な罫線を見えなくしています*/
+hr {
+    display:block;
+    height:1px;
+    border:0;
+    border-top:1px solid #cccccc;
+    margin:1em 0;
+    padding:0;
+}
+
+/*縦方向の揃え位置を中央揃えに指定しています*/
+
+input, select {
+    vertical-align:middle;
+}
+
+/* よくあるリンクはここに追加 */
+.navigation {
+	text-decoration: none;
+}
+
+html {
+	width: 320px;
+}
+
+a {
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+a,div,section {
+	box-sizing: border-box;
+}
+
+#titleArea {
+	height: 22px;
+	position: fixed;
+	z-index: 1;
+}
+.logo {
+	width: 320px;
+	height: 22px;
+	line-height: 0;
+	font-size: 0;
+}
+
+@font-face {
+    font-family: "dot";
+    src:  url("../font/misaki_gothic.woff") format('woff');
+}
+
+.topNav {
+	font-family: "dot";
+	position: absolute;
+	top: 22px;
+}
+
+
+.navigation {
+	display: block;
+	height: 44px;
+	line-height: 44px;
+	text-align: center;
+	color: #000;
+	font-size: 25px;
+}
+
+
+.navList {
+	border-bottom: 1px solid #000;
+	-webkit-transition: 0.2s;
+	position: absolute;
+	width: 320px;
+}
+
+.moveNavTop {
+	-webkit-transform: translateY(-45px);
+}
+
+
+.moveNavActive {
+	-webkit-transform: translateY(0);
+	background: #ff0;
+	position: fixed;
+}
+
+.moveNavBottom {
+	-webkit-transform: translateY(520px);
+	position: fixed;
+}
+
+.closeNavigation {
+	position: absolute;
+	top: 7px;
+	width: 44px;
+	height: 30px;
+	text-decoration: none;
+	font-size: 16px;
+	left: 10px;
+	background: #000;
+	text-align: center;
+	line-height: 32px;
+	color: #fff;
+	display: none;
+	text-indent: 2px;
+}
+
+.closeNavigation:hover {
+	background: #fff;
+	color: #000;
+	border:1px solid #000;
+}
+
+.content {
+	padding-top: 66px;
+}
+
+.main {
+	display: none;
+}
+
+.novelHeading a{
+	width: 300px;
+	height: 100px;
+	margin: 0 auto;
+	background: #000;
+	display: block;
+	color: #fff;
+	margin-top: 7px;
+}
+
+.btn {
+	width: 300px;
+	height: 44px;
+	margin: 7px auto 0 auto;
+	background: #000;
+	line-height: 44px;
+	text-align: center;
+	display: block;
+	color: #fff;
+	text-decoration: none;
+	font-weight: bold;
+}

@@ -12,7 +12,7 @@ jQuery(function($) {
 	var dragFlag = false;
 	var isToolTipOpen = false;
 	init();
-    
+    /*
 	$('#fieldWrap').bind({
 		'touchstart': function(e) {
 			 if( dragFlag == false ){
@@ -20,7 +20,6 @@ jQuery(function($) {
 				 this.touchY = event.changedTouches[0].pageY;
 			}
     	},
-    	/* フリック中 */
     	'touchmove': function(e) {
     		if( dragFlag == false ){
     			e.preventDefault();
@@ -29,7 +28,6 @@ jQuery(function($) {
     			$("#field").css("-webkit-transform", "rotateX("+ this.slideY + "deg) rotateY("+ this.slideX + "deg)");
     		}
     	},
-    	/* フリック終了 */
     	'touchend': function(e) {
     		if( dragFlag == false ){
     			slideXOld = this.slideX;
@@ -37,12 +35,22 @@ jQuery(function($) {
     		}
     	}
    });
+   */
    
+	$('#fieldWrap').bind({
+		'touchstart': function(e) {
+    	},
+    	'touchmove': function(e) {
+    	},
+    	'touchend': function(e) {
+    	}
+   });
    $('.myCreature').bind({
 		'touchstart': function(e) {
 			dragFlag = true;
 			$canvas = addCanvas();
 			points = [{x:event.changedTouches[0].pageX, y:event.changedTouches[0].pageY}];
+			$(this).addClass("selectObj");
     	},
     	'touchmove': function(e) {
 			e.preventDefault();
@@ -71,12 +79,57 @@ jQuery(function($) {
 		},
 		'touchend': function(e) { 
 			var myCreatureId = $(this).attr("id");
+			$(this).removeClass("selectObj");
 			$canvas.remove();
 			points = [];
 			dragFlag = false;
 			isSelectTarget(event, myCreatureId);
 		}
 	});
+	
+	
+	$('.myCard').bind({
+		'touchstart': function(e) {
+			e.preventDefault();
+			dragFlag = true;
+			$canvas = addCanvas();
+			points = [{x:event.changedTouches[0].pageX, y:event.changedTouches[0].pageY}];
+			$(this).addClass("selectObj");
+    	},
+    	'touchmove': function(e) {
+			e.preventDefault();
+			var ctx = $canvas.get(0).getContext('2d');
+		    points.push({x:event.changedTouches[0].pageX, y:event.changedTouches[0].pageY});
+		    var array = getRectPoints(
+		    	points[0].x,
+		    	points[0].y,
+		    	points[points.length - 1].x,
+		    	points[points.length - 1].y
+		    );
+		    ctx.fillStyle = "rgba(250,0,0,0.7)";
+		    ctx.clearRect(0, 0, canvasWidth, canvasHeight);
+		    ctx.beginPath();
+		    ctx.moveTo(array[0].x, array[0].y);
+		    ctx.lineTo(array[1].x, array[1].y);
+		    ctx.lineTo(array[2].x, array[2].y);
+		    ctx.lineTo(array[3].x, array[3].y);
+		    ctx.lineTo(array[4].x, array[4].y);
+		    ctx.lineTo(array[5].x, array[5].y);
+		    ctx.lineTo(array[6].x, array[6].y);
+		    ctx.closePath();
+		    ctx.fill();
+		},
+		'touchend': function(e) { 
+			$(this).removeClass("selectObj");
+			$canvas.remove();
+			points = [];
+			dragFlag = false;
+		}
+	});
+	
+	
+	
+	
 
 	function getRectPoints(ptax, ptay, ptbx, ptby) {
 		var Vx= ptbx - ptax;

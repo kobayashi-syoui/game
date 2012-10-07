@@ -5,102 +5,53 @@
     <meta name="viewport" content="width=device-width, user-scalable=no"> 
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <link rel="stylesheet" href="css/battle.css?1">
+    <link rel="stylesheet" href="css/base.css">
+    <header id="titleArea">
+    	<h1><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAoAAAAAsBAMAAAAHohSsAAAAGFBMVEXHx8cZGRk/Pz9nZ2efn5/p6en///8AAAD+RLH/AAAB4ElEQVR4Xu3az2vbMBjG8bLEvacr+ByaLNfVZO01y69eA7N1Trfq0TV2IO+/P8RokS23Ruo2k/J8jnLQ4Ussw2tfyLtQdEBiQAZkQAYs5wrYZQwYqdrCwoABo5RbFMP1OlH4xIAxpnhxz4DhjthlqV0ov6onBgz3BY4HBgxVqXz2vHCtfjFgqANcOmXAQHf7mby4Vg8MGEgpONRPsVBnl06NlRPqjIh4C5b3U9Oym6ChZf8TpAENfQQ8Qg/G8kc5SfAkVlccGD+gF+q1gPB3O+OA1SVqlm0B4UfwA/rZnYAd9c84oJTfgN1qLOXNQmF/K5bAiOOElpVnMN5i54VXd2uLZDqu9T9MmCjoYTZPgDwVBoxQbaCLAnopwoBx5oC9ff9ZwJrIgD2cgQE+X/5I5X8FlA8ZMJ8J/4HRJgrQq/StgA3dnd4qi7pzPwPLDfQuUdhnDBh3+6IYZjeLAshnDBhsAodeiYW6Xs7A7m16OgP92zfPUrGu5gl0W0DTw1P4XAIeUdM+TJC/GtB8qIClysfuePpRAnGgihoOVEMd9HfnQORIP1il4OBLpXB3epmKJVcbvtZ853OYL9ZjTO1EejSyE+l7icOPiy7Wi54/LuLnbfzA8laCMSAxIAMyIAPSbwU7GaGZYpQ6AAAAAElFTkSuQmCC" class="logo" alt="DATA BATTLE"></h1>
+    </header>
+    <nav>
+    	<ul class="topNav">
+    		<li class="navList"><a href="javascript:void(0);" class="closeNavigation">×</a><a href="javascript:void(0);" class="navigation">シナリオ</a></li>
+    		<li class="navList"><a href="javascript:void(0);" class="closeNavigation">×</a><a href="javascript:void(0);" class="navigation">バトル</a></li>
+    		<li class="navList"><a href="javascript:void(0);" class="closeNavigation">×</a><a href="javascript:void(0);" class="navigation">カード</a></li>
+    		<li class="navList"><a href="javascript:void(0);" class="closeNavigation">×</a><a href="javascript:void(0);" class="navigation">ショップ</a></li>
+    		<li class="navList"><a href="javascript:void(0);" class="closeNavigation">×</a><a href="javascript:void(0);" class="navigation">フレンド</a></li>
+    	</ul>
+    </nav>
+    <div class="content">
+    	<section class="main">
+    		<h1 class="novelHeading">
+    			<a href="#" class="navigation">第一話&nbsp;発端</a>
+    		</h1>
+    		<h1 class="novelHeading">
+    			<a href="#" class="navigation">第一話&nbsp;発端</a>
+    		</h1>
+    		<h1 class="novelHeading">
+    			<a href="#" class="navigation">第一話&nbsp;発端</a>
+    		</h1>
+    		<h1 class="novelHeading">
+    			<a href="#" class="navigation">第一話&nbsp;発端</a>
+    		</h1>
+    		<h1 class="novelHeading">
+    			<a href="#" class="navigation">第一話&nbsp;発端</a>
+    		</h1>
+    		<h1 class="novelHeading">
+    			<a href="#" class="navigation">第一話&nbsp;発端</a>
+    		</h1>
+    	</section>
+    	<section class="main">
+    		<a class="btn" href="#">
+    			フレンド対戦
+    		</a>
+    		<a class="btn" href="#">
+    			ランダム対戦
+    		</a>
+    	</section>
+    </div>
     <script src="js/jquery-1.7.2.min.js"></script>
-    <script src="js/battle.js?2"></script>
+    <script src="js/interface.js"></script>
     <!--
     <script src="js/jquery.mobile-1.1.0.min.js"></script>
     -->
-    <section id="master">
-    	<dl id="myMaster" class="masterStatus">
-    		<dt class="masterHpTitle">HP
-    		<dd class="masterHp">■■■■■■■■■■■■■■■■■■■■
-    		<dt class="masterMpTitle">DP
-    		<dd class="masterMp">24
-    	</dl>
-    	<dl id="targetMaster" class="masterStatus">
-    		<dt class="masterHpTitle">HP
-    		<dd class="masterHp">■■■■■■■■■■■■■■■■■■■■
-    		<dt class="masterMpTitle">DP
-    		<dd class="masterMp">24
-    	</dl>
-    </section>	
-	<div id="wrap">
-		<div id="fieldWrap">
-			<div id="field">
-				<div id="fieldStyle">
-				<!--
-					<ul id="my">
-						<li id="area1" class="myArea"></li>
-						<li id="area2" class="myArea"></li>
-						<li id="area3" class="myArea"></li>
-						<li id="area4" class="myArea"></li>
-						<li id="area5" class="myArea"></li>
-					</ul>
-					<ul id="target">
-						<li id="area6" class="targetArea"></li>
-						<li id="area7" class="targetArea"></li>
-						<li id="area8" class="targetArea"></li>
-						<li id="area9" class="targetArea"></li>
-						<li id="area10" class="targetArea"></li>
-					</ul>
-					-->
-				</div>
-				<ul>
-					<li id="f1" class="myCreature"><img src="test.svg" class="fieldCreature" draggable="true">
-					<span class="hp">1</span>
-					<li id="f2" class="myCreature"><img src="test.svg" class="fieldCreature" draggable="true">
-					<span class="hp">2</span>
-					<li id="f3" class="myCreature"><img src="test.svg" class="fieldCreature" draggable="true">
-					<span class="hp">3</span>
-					<li id="f4" class="myCreature"><img src="test.svg" class="fieldCreature" draggable="true">
-					<span class="hp">4</span>
-					<li id="f5" class="myCreature"><img src="test.svg" class="fieldCreature" draggable="true">
-					<span class="hp">5</span>
-				</ul>
-				<ul>
-					<li id="f6" class="targetCreature"><img src="test.svg" class="fieldCreature">
-					<span class="hp">6</span>
-										<li id="f7" class="targetCreature"><img src="test.svg" class="fieldCreature">
-										<span class="hp">7</span>
-										<li id="f8" class="targetCreature"><img src="test.svg" class="fieldCreature">
-										<span class="hp">8</span>
-					<li id="f9" class="targetCreature"><img src="test.svg" class="fieldCreature">
-					<span class="hp">9</span>
-					<li id="f10" class="targetCreature"><img src="test2.svg" class="fieldCreature">
-					<span class="hp">10</span>
-				</ul>
-			</div>
-		</div>
-		<ul id="myHand">
-			<li class="myCard"><img src="card/magic/thunder.png" width="44px" height="44px">
-			<li class="myCard"><img src="card/monster/iguana.jpg" width="44px" height="44px">
-			<li class="myCard"><img src="card/magic/beam.png" width="44px" height="44px">
-			<li class="myCard"><img src="card/monster/kani.jpg" width="44px" height="44px">
-			<li class="myCard"><img src="card/magic/freeze.png" width="44px" height="44px">
-			<li class="myCard"><img src="card/magic/darkness.png" width="44px" height="44px">
-			<li class="myCard"><img src="card/monster/stanbeetle.jpg" width="44px" height="44px">
-		</ul>
-	</div>
-	<section id="toolTip" class="monsterToolTip">
-		<hgroup class="cardTitle">
-			<h1 class="cardName">
-			</h1>
-			<h2 class="cardType">
-			</h2>
-			<h2 class="cardHp">
-			</h2>
-		</hgroup>
-		<ul class="cardAttack">
-			<li class="cardAttackType">
-			
-			<li class="cardPower">
-			
-			<li class="cardAttackEffect">
-			
-		</ul>
-	</section>
-	<div class="debug">
-		デバッグメッセージ
-	</div>
+
 </html>

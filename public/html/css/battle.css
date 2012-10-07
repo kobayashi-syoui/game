@@ -136,36 +136,44 @@ canvas {
 #fieldWrap {
 	-webkit-perspective: 400;
 	-webkit-transform-style: preserve-3d;
-	-webkit-transform:translate3d(0,-20px,0) rotateX(-40deg) scale(0.95);
+	-webkit-transform:translate3d(0,-20px,0) rotateX(-40deg) scale(0.8);
 	width:100%;
 }
 
 #field{
 	-webkit-transform-style: preserve-3d;
 	width:300px;
-	height:200px;
+	height:185px;
 	margin: 0 auto;
 }
 
         #fieldStyle {
 	        background:#fff;
 	        width:300px;
-	        height:185px;
+	        height:150px;
 	        -webkit-transform: rotateX(90deg) translateY(35px);
 	        position: absolute;
+	        border-radius:50%;
+	        -webkit-box-shadow:0 0 20px 20px #fff;
         }
         #myHand {
 	        display: -webkit-box;
 	        position: absolute;
 	        bottom: 0;
-	        -webkit-overflow-scrolling: auto;
 	        width: 320px;
+	        background: #000;
+	        border-top: 1px solid #fff;
+	        padding-top: 1px;
         }
         .myCard {
 	        list-style: none;
 	        width: 44px;
 	        height: 44px;
 	        margin-right: 1px;
+        }
+        .myCard img {
+	        width: 44px;
+	        height: 44px;
         }
 .myCreature, .targetCreature {
 	position: absolute;
@@ -196,52 +204,52 @@ canvas {
 
 
 #f1 {
-	-webkit-transform: translate3d(24px,40px,0);	
+	-webkit-transform: translate3d(24px,29px,0);	
 	z-index:100;
 }
 
 #f2 {
-	-webkit-transform: translate3d(24px,40px,49px);
+	-webkit-transform: translate3d(24px,29px,49px);
 	z-index:101;
 }
 
 #f3 {
-	-webkit-transform: translate3d(24px,40px,98px);
+	-webkit-transform: translate3d(24px,29px,98px);
 	z-index:102;
 }
 
 #f4 {
-	-webkit-transform: translate3d(75px,40px,24px);
+	-webkit-transform: translate3d(75px,29px,24px);
 	z-index:100;
 }
 
 #f5 {
-	-webkit-transform: translate3d(75px,40px,73px);
+	-webkit-transform: translate3d(75px,29px,73px);
 	z-index:101;
 }
 
 #f6 {
-	-webkit-transform: translate3d(236px,40px,0);
+	-webkit-transform: translate3d(236px,29px,0);
 	z-index:100;
 }
 
 #f7 {
-	-webkit-transform: translate3d(236px,40px,49px);
+	-webkit-transform: translate3d(236px,29px,49px);
 	z-index:101;
 }
 
 #f8 {
-	-webkit-transform: translate3d(236px,40px,98px);
+	-webkit-transform: translate3d(236px,29px,98px);
 	z-index:102;
 }
 
 #f9 {
-	-webkit-transform: translate3d(185px,40px,24px);
+	-webkit-transform: translate3d(185px,29px,24px);
 	z-index:100;
 }
 
 #f10 {
-	-webkit-transform: translate3d(185px,40px,73px);
+	-webkit-transform: translate3d(185px,29px,73px);
 	z-index:101;
 }
 
@@ -365,9 +373,10 @@ canvas {
 }
 
 .masterHp {
-	letter-spacing: -3px;
-	font-size: 20px;
+	letter-spacing: -1px;
+	font-size: 8px;
 	color: #00f;
+	-webkit-transform: scaleX(0.5);
 }
 
 #myMaster .masterMpTitle {

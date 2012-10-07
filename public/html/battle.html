@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <title>DT</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no"> 
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="css/battle.css?2">
+    <script src="js/jquery-1.7.2.min.js"></script>
+    <script src="js/battle.js?2"></script>
+    <!--
+    <script src="js/jquery.mobile-1.1.0.min.js"></script>
+    -->
+    <section id="master">
+    	<dl id="myMaster" class="masterStatus">
+    		<dt class="masterHpTitle">HP
+    		<dd class="masterHp">■■■■■■■■■■■■■■■■■■■■
+    		<dt class="masterMpTitle">DP
+    		<dd class="masterMp">24
+    	</dl>
+    	<dl id="targetMaster" class="masterStatus">
+    		<dt class="masterHpTitle">HP
+    		<dd class="masterHp">■■■■■■■■■■■■■■■■■■■■
+    		<dt class="masterMpTitle">DP
+    		<dd class="masterMp">24
+    	</dl>
+    </section>	
+	<div id="wrap">
+		<div id="fieldWrap">
+			<div id="field">
+				<div id="fieldStyle">
+				<!--
+					<ul id="my">
+						<li id="area1" class="myArea"></li>
+						<li id="area2" class="myArea"></li>
+						<li id="area3" class="myArea"></li>
+						<li id="area4" class="myArea"></li>
+						<li id="area5" class="myArea"></li>
+					</ul>
+					<ul id="target">
+						<li id="area6" class="targetArea"></li>
+						<li id="area7" class="targetArea"></li>
+						<li id="area8" class="targetArea"></li>
+						<li id="area9" class="targetArea"></li>
+						<li id="area10" class="targetArea"></li>
+					</ul>
+					-->
+				</div>
+				<ul>
+					<li id="f1" class="myCreature"><img src="test.svg" class="fieldCreature" draggable="true">
+					<span class="hp">1</span>
+					<li id="f2" class="myCreature"><img src="test.svg" class="fieldCreature" draggable="true">
+					<span class="hp">2</span>
+					<li id="f3" class="myCreature"><img src="test.svg" class="fieldCreature" draggable="true">
+					<span class="hp">3</span>
+					<li id="f4" class="myCreature"><img src="test.svg" class="fieldCreature" draggable="true">
+					<span class="hp">4</span>
+					<li id="f5" class="myCreature"><img src="test.svg" class="fieldCreature" draggable="true">
+					<span class="hp">5</span>
+				</ul>
+				<ul>
+					<li id="f6" class="targetCreature"><img src="test.svg" class="fieldCreature">
+					<span class="hp">6</span>
+										<li id="f7" class="targetCreature"><img src="test.svg" class="fieldCreature">
+										<span class="hp">7</span>
+										<li id="f8" class="targetCreature"><img src="test.svg" class="fieldCreature">
+										<span class="hp">8</span>
+					<li id="f9" class="targetCreature"><img src="test.svg" class="fieldCreature">
+					<span class="hp">9</span>
+					<li id="f10" class="targetCreature"><img src="test2.svg" class="fieldCreature">
+					<span class="hp">10</span>
+				</ul>
+			</div>
+		</div>
+		<ul id="myHand">
+			<li class="myCard"><img src="card/magic/thunder.png">
+			<li class="myCard"><img src="card/monster/iguana.jpg">
+			<li class="myCard"><img src="card/magic/beam.png">
+			<li class="myCard"><img src="card/monster/kani.jpg">
+			<li class="myCard"><img src="card/magic/freeze.png">
+			<li class="myCard"><img src="card/magic/darkness.png">
+			<li class="myCard"><img src="card/monster/stanbeetle.jpg">
+		</ul>
+	</div>
+	<section id="toolTip" class="monsterToolTip">
+		<hgroup class="cardTitle">
+			<h1 class="cardName">
+			</h1>
+			<h2 class="cardType">
+			</h2>
+			<h2 class="cardHp">
+			</h2>
+		</hgroup>
+		<ul class="cardAttack">
+			<li class="cardAttackType">
+			
+			<li class="cardPower">
+			
+			<li class="cardAttackEffect">
+			
+		</ul>
+	</section>
+	<div class="debug">
+		デバッグメッセージ
+	</div>
+</html>
